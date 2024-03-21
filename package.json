@@ -1,0 +1,82 @@
+{
+  "name": "@spa-tools/live-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "This is a live demo of goodies from the open-source @spa-tools package.",
+  "keywords": [
+    "@spa-tools",
+    "demo"
+  ],
+  "author": "Ryan Howard <rollercodester@live.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "prettier": {
+    "$schema": "http://json.schemastore.org/prettierrc",
+    "endOfLine": "auto",
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@spa-tools/api-client": "1.0.0-rc.5",
+    "@spa-tools/core-router": "1.0.0-rc.3",
+    "@spa-tools/interaction-hooks": "1.0.0-rc.1",
+    "@spa-tools/runtime-config": "1.0.0-rc.1",
+    "@spa-tools/utilities": "1.0.0-rc.1",
+    "console-feed": "^3.5.0",
+    "framer-motion": "^10.18.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-sort-keys-plus": "^1.3.1",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
