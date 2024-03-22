@@ -7,7 +7,7 @@ export function HomeView(demoProps?: DemoProps) {
   return (
     <Box
       sx={{
-        background: 'url(/spa-tools-demo/img/spatools-home-bg.png), linear-gradient(to top, #ffffff, #fbf3ff, #dda7f2)',
+        background: 'url(/spa-tools-demo/img/spatools-home-bg.png), linear-gradient(to top, #f9f6fa, #fbf3ff, #dda7f2)',
         backgroundPosition: 'bottom, bottom right',
         backgroundRepeat: 'no-repeat, no-repeat',
         backgroundSize: '100% 20%, cover',
