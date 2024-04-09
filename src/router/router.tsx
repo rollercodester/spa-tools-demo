@@ -32,6 +32,7 @@ export function ShowcaseRouter() {
 
   return (
     <CoreReactRouter<ShowcaseRoute>
+      basePath='/spa-tools-demo'
       fallbackRoute={routes.homeRoute}
       onRouteRequest={handleRouteRequest}
       routes={routes}
