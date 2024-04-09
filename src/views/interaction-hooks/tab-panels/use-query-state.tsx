@@ -1,6 +1,5 @@
 import { Code, Text, VStack, Wrap } from '@chakra-ui/react';
 import { useQueryState } from '@spa-tools/interaction-hooks';
-import { addForwardSlash } from '@spa-tools/utilities';
 import { DemoButton, DemoCodeHeading, DemoViewport } from 'showcase/widgets';
 
 export function UseQueryStateTabPanel() {
@@ -61,7 +60,7 @@ function DemoWidget() {
         />
         <DemoButton
           onClick={() => {
-            window.location.href = addForwardSlash(window.location.href.split('?')[0]);
+            window.location.href = window.location.href.split('?')[0];
           }}
           text='Hard reload to test cache'
         />
