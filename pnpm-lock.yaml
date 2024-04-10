@@ -18,20 +18,20 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.4)(@types/react@18.2.67)(react@18.2.0)
   '@spa-tools/api-client':
-    specifier: 1.0.0-rc.5
-    version: 1.0.0-rc.5(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
+    specifier: ^1.0.0
+    version: 1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
   '@spa-tools/core-router':
-    specifier: 1.0.0-rc.3
-    version: 1.0.0-rc.3(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
+    specifier: ^1.0.0
+    version: 1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
   '@spa-tools/interaction-hooks':
-    specifier: 1.0.0-rc.1
-    version: 1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
+    specifier: ^1.0.0
+    version: 1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
   '@spa-tools/runtime-config':
-    specifier: 1.0.0-rc.1
-    version: 1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
+    specifier: ^1.0.0
+    version: 1.0.2(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
   '@spa-tools/utilities':
-    specifier: 1.0.0-rc.1
-    version: 1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
+    specifier: ^1.0.0
+    version: 1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0)
   console-feed:
     specifier: ^3.5.0
     version: 3.5.0(jquery@3.7.1)(react-dom@18.2.0)(react@18.2.0)
@@ -2274,8 +2274,8 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: false
 
-  /@spa-tools/api-client@1.0.0-rc.5(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
-    resolution: {integrity: sha512-+/TS6Rd22VFPmvu/dS2iM2Ig2vSwIJbVzenLZwuzYc1MJ6RBZFXUIHFET/tQtsYXwPYEyE8YvRW/+kKyeCHZhQ==}
+  /@spa-tools/api-client@1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
+    resolution: {integrity: sha512-8ZxU1E8+k4u1sLGSFrzV6bQP82o+VxgqyPgRTjhaVQolVN8lI72QQEEeIjmYrFu8Yqw+sWzyd0aa+VLNhe5Cfg==}
     peerDependencies:
       react: ^18.2.0
       tsup: ^8.0.1
@@ -2288,8 +2288,8 @@ packages:
       vitest: 1.4.0(@types/node@17.0.45)
     dev: false
 
-  /@spa-tools/core-router@1.0.0-rc.3(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
-    resolution: {integrity: sha512-AZlx3+GmGxYOXmcDLBLg7YqSFMMv3E5LS/jgc2JupjX1Nsv6inIZOWVpn7NvtF5WAlbNzwCqG271Y7e8Q8f6OA==}
+  /@spa-tools/core-router@1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
+    resolution: {integrity: sha512-QOQMZjD2IjFZPffn+wHYvNVMcApSJqes0fa7tC75ydXsaSuxV0ua9JcXLTCHQp7wdxl1VuF6LBhqcJ4N/STxTA==}
     peerDependencies:
       react: ^18.2.0
       tsup: ^8.0.1
@@ -2302,8 +2302,8 @@ packages:
       vitest: 1.4.0(@types/node@17.0.45)
     dev: false
 
-  /@spa-tools/interaction-hooks@1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
-    resolution: {integrity: sha512-oebdVlE1oQxpJ63PmeqXNBmbX1Vm08j9vue/tse7BOQH2FTUsOMFrJtQdnXGTcbrg/KIY20WdaNGriIwXk9g0A==}
+  /@spa-tools/interaction-hooks@1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
+    resolution: {integrity: sha512-SXP9cm051t9YDP3/vx2kDq0kFkfMzvI+OUYExpEOFfylmHGG/4G0OVSnzSjEYtXSiAyznBhpue4nwlX9fvxYCw==}
     peerDependencies:
       react: ^18.2.0
       tsup: ^8.0.1
@@ -2316,8 +2316,8 @@ packages:
       vitest: 1.4.0(@types/node@17.0.45)
     dev: false
 
-  /@spa-tools/runtime-config@1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
-    resolution: {integrity: sha512-NmdH6iOx9Lz+EMbfrOu/qvKdIfeWKQiIeJ1r03v2o+qvLsdJdGpO7rXxiV9b0T2hOiLMSfUeE23xTOJPl1o/Tg==}
+  /@spa-tools/runtime-config@1.0.2(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
+    resolution: {integrity: sha512-2EcYyvtEuRIUGETY6ccuOEnZV/Wel8IGSXKabZTKHeggW+SrayEC1PrTNwaiBNSoQpo98RGkjtLHjvW+Q45rEw==}
     hasBin: true
     peerDependencies:
       react: ^18.2.0
@@ -2331,8 +2331,8 @@ packages:
       vitest: 1.4.0(@types/node@17.0.45)
     dev: false
 
-  /@spa-tools/utilities@1.0.0-rc.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
-    resolution: {integrity: sha512-goBS84Bfx0TUrN/0zw/ia+mGLCASi1GJL7E+5VnAbUmIL9Y9h238Q/wDAvhz66QhmZuT9OvzegBNVmmEhPpGWQ==}
+  /@spa-tools/utilities@1.0.1(react@18.2.0)(tsup@8.0.2)(typescript@5.4.3)(vitest@1.4.0):
+    resolution: {integrity: sha512-f1urjoDv6/aiHdcjIQ0b2XhzGbSbl9pePuaBtPk/16VwUWEUiHxV+O2qFeydiOoAMb1WeJLsYZfyNVBfeFjQKA==}
     peerDependencies:
       react: ^18.2.0
       tsup: ^8.0.1
