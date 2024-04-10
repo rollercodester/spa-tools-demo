@@ -73,7 +73,7 @@ const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
   //
   // development environment settings (based on domain name)
   //
-  'myapp.dev.com': {
+  'dev.rollercodester.github.io': {
     authClientId: 'auth-client-id-dev',
     authUserPoolId: 'user-pool-id-dev',
     environment: 'development',
@@ -84,7 +84,7 @@ const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
   //
   // staging environment settings (based on domain name)
   //
-  'myapp.stg.com': {
+  'stg.rollercodester.github.io': {
     authClientId: 'auth-client-id-stg',
     authUserPoolId: 'user-pool-id-stg',
     environment: 'staging',
@@ -95,7 +95,7 @@ const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
   //
   // production environment settings (based on domain name)
   //
-  'myapp.com': {
+  'rollercodester.github.io': {
     authClientId: 'auth-client-id-prod',
     authUserPoolId: 'user-pool-id-prod',
     environment: 'production',
