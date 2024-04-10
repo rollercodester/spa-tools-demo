@@ -11,6 +11,14 @@ export interface MyAppConfigSettings extends BaseConfigSettings<MyAppEnvironment
 }
 
 export const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
+  'dev.rollercodester.github.io': {
+    authClientId: 'auth-client-id-dev',
+    authUserPoolId: 'user-pool-id-dev',
+    environment: 'development',
+    loggerClientId: 'logger-client-id-dev',
+    loggerUrl: 'https://dev.loggingservice.com',
+    myAppApiUrl: 'https://api.dev.myapp.com',
+  },
   localhost: {
     authClientId: 'auth-client-id-dev',
     authUserPoolId: 'user-pool-id-dev',
@@ -19,7 +27,7 @@ export const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
     loggerUrl: 'https://dev.loggingservice.com',
     myAppApiUrl: 'https://api.dev.myapp.com',
   },
-  'myapp.com': {
+  'rollercodester.github.io': {
     authClientId: 'auth-client-id-prod',
     authUserPoolId: 'user-pool-id-prod',
     environment: 'production',
@@ -27,15 +35,7 @@ export const myAppConfigSet: DomainConfig<MyAppConfigSettings> = {
     loggerUrl: 'https://loggingservice.com',
     myAppApiUrl: 'https://api.myapp.com',
   },
-  'myapp.dev.com': {
-    authClientId: 'auth-client-id-dev',
-    authUserPoolId: 'user-pool-id-dev',
-    environment: 'development',
-    loggerClientId: 'logger-client-id-dev',
-    loggerUrl: 'https://dev.loggingservice.com',
-    myAppApiUrl: 'https://api.dev.myapp.com',
-  },
-  'myapp.stg.com': {
+  'stg.rollercodester.github.io': {
     authClientId: 'auth-client-id-stg',
     authUserPoolId: 'user-pool-id-stg',
     environment: 'staging',
