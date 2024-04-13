@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Box, Code, Heading, ListItem, Text, UnorderedList, VStack, Wrap } from '@chakra-ui/react';
 import { useCallEndpoint } from '@spa-tools/api-client';
 import { useInfiniteScroll } from '@spa-tools/interaction-hooks';
@@ -53,29 +53,17 @@ function useGetRecipes() {
 function DemoWidget() {
   const scrollTargetRef = useRef<HTMLDivElement>(null);
   const [disableScroll, setDisableScroll] = useState(false);
-  const [bottomThresholdPercent, setBottomThresholdPercent] = useState(10);
-  const [total, setTotal] = useState(0);
-  const [count, setCount] = useState(0);
-  const isScrolling = useInfiniteScroll(scrollTargetRef, disableScroll, bottomThresholdPercent);
+  const isScrolling = useInfiniteScroll(scrollTargetRef, disableScroll);
   const [getRecipes, recipesResult, isRecipesCallPending, clearRecipes] = useGetRecipes();
 
-  const handleGetRecipes = useCallback(() => {
-    const recordCount = recipesResult?.data?.length ?? -1;
-    const totalCount = recipesResult?.total ?? 0;
-
-    setCount(recordCount);
-    setTotal(totalCount);
-
-    if (!isRecipesCallPending && recordCount < totalCount) {
-      getRecipes();
-    }
-  }, [getRecipes, isRecipesCallPending, recipesResult?.data?.length, recipesResult?.total]);
+  const count = recipesResult?.data?.length ?? -1;
+  const total = recipesResult?.total ?? 0;
 
   useEffect(() => {
-    if (isScrolling) {
-      handleGetRecipes();
+    if ((isScrolling && !isRecipesCallPending && count < total) || (!isRecipesCallPending && !recipesResult)) {
+      getRecipes();
     }
-  }, [handleGetRecipes, isScrolling]);
+  }, [count, getRecipes, isRecipesCallPending, isScrolling, recipesResult, total]);
 
   return (
     <VStack sx={{ alignItems: 'flex-start', flexGrow: 1, gap: '1rem', p: '1.5rem', width: '100%' }}>
@@ -88,17 +76,7 @@ function DemoWidget() {
         />
         <DemoButton
           onClick={() => {
-            setBottomThresholdPercent((curr) => (curr === 10 ? 50 : 10));
-          }}
-          text={`Change bottom threshold from ${bottomThresholdPercent}% to ${
-            bottomThresholdPercent === 10 ? '50%' : '10%'
-          }`}
-        />
-        <DemoButton
-          onClick={() => {
             clearRecipes();
-            setTotal(0);
-            setCount(0);
           }}
           text='Reset Recipes'
         />
@@ -111,7 +89,7 @@ function DemoWidget() {
         sx={{
           bgColor: 'whiteAlpha.200',
           color: 'whiteAlpha.800',
-          height: '300px',
+          height: '220px',
           overflowY: 'auto',
           px: '1rem',
           py: '0.5rem',
@@ -136,7 +114,7 @@ function DemoWidget() {
 //
 //
 
-const CODE = `import { useCallback, useEffect, useRef, useState } from 'react';
+const CODE = `import { useEffect, useRef, useState } from 'react';
 import { useCallEndpoint } from '@spa-tools/api-client';
 import { useInfiniteScroll } from '@spa-tools/interaction-hooks';
 
@@ -160,38 +138,20 @@ function UseInfiniteScrollDemo() {
   // sentinel for scroll intersection
   const scrollTargetRef = useRef<HTMLDivElement>(null);
   const [disableScroll, setDisableScroll] = useState(false);
-  const [bottomThresholdPercent, setBottomThresholdPercent] = useState(10);
-  const [total, setTotal] = useState(0);
-  const [count, setCount] = useState(0);
   const [getRecipes, recipesResult, isRecipesCallPending, clearRecipes] = useGetRecipes();
 
   // anytime our scroll target is intersected for vertical scroll, the hook
   // will return true, which is how we know to fetch the next page of recipes
-  const isScrolling = useInfiniteScroll(
-    scrollTargetRef,
-    disableScroll,
-    bottomThresholdPercent
-  );
+  const isScrolling = useInfiniteScroll(scrollTargetRef, disableScroll);
 
-  const handleGetRecipes = useCallback(() => {
-    const recordCount = recipesResult?.data?.length ?? -1;
-    const totalCount = recipesResult?.total ?? 0;
-
-    setCount(recordCount);
-    setTotal(totalCount);
-
-    if (!isRecipesCallPending && recordCount < totalCount) {
-      getRecipes();
-    }
-  }, [getRecipes, isRecipesCallPending, recipesResult?.data?.length, recipesResult?.total]);
+  const count = recipesResult?.data?.length ?? -1;
+  const total = recipesResult?.total ?? 0;
 
   useEffect(() => {
-    if (isScrolling) {
-      // if the infinite scroll says we're scrolling,
-      // then we retrieve the next page of recipes
-      handleGetRecipes();
+    if ((isScrolling && !isRecipesCallPending && count < total) || (!isRecipesCallPending && !recipesResult)) {
+      getRecipes();
     }
-  }, [handleGetRecipes, isScrolling]);
+  }, [count, getRecipes, isRecipesCallPending, isScrolling, recipesResult, total]);
 
   return (
     <div>
@@ -207,22 +167,8 @@ function UseInfiniteScrollDemo() {
         </button>
         <button
           onClick={() => {
-            // here we demonstrate how we can change the bottom
-            // threshold percentage, which determines when the
-            // infinite scroll feature will kick in
-            setBottomThresholdPercent((curr) => (curr === 10 ? 50 : 10));
-          }}
-        >
-          {\`Change bottom threshold from \${bottomThresholdPercent}% to \${
-            bottomThresholdPercent === 10 ? '50%' : '10%'
-          }\`}
-        </button>
-        <button
-          onClick={() => {
             // here we simply clear the data so we can start over
             clearRecipes();
-            setTotal(0);
-            setCount(0);
           }}
         />
           Reset Recipes
